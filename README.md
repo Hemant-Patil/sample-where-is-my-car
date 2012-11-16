@@ -15,13 +15,13 @@ Application Files
 * abstract.txt
 * app.json
 * cordova.js               // needed by the Ripple Emulator
-* pg_event_assist.js       // allows app to be run as a web app or PhoneGap* app and use deviceready for both for initialization.
+* pg_event_assist.js       // allows app to run as web app or PhoneGap* app and use deviceready for both for initialization
 * fauxgap.js               // stub file, fake PhoneGap API for debugging on desktop
 * css/app_styles.css
 * css/ios_styles.css
 * js/app.js
 
-Copyright (c) 2012, Intel Corporation
+Copyright (c) 2012, Intel Corporation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -49,7 +49,7 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-Cordova (PhoneGap) Library
+Cordova (PhoneGap*) Library
 --------------------------
 * source:  http://www.phonegap.com/
 * license:  http://www.apache.org/licenses/LICENSE-2.0.html
