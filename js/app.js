@@ -4,12 +4,20 @@
      * Please see http://software.intel.com/html5/license/samples 
      * and the included README.md file for license terms and conditions.
 */
+function byId(id)
+{
+    return document.getElementById(id);
+}
 
-var geolocation_options_constant = { maximumAge: 3000, timeout: 3000, enableHighAccuracy: true };
+
+var geolocation_options_constant = { maximumAge: 3000, timeout: Infinity, enableHighAccuracy: true };
 var user_icon_width_constant  = 32;
 var user_icon_height_constant = 32;
 var car_icon_width_constant = 32;
 var car_icon_height_constant = 32;
+
+var end_finding = null;
+
 /*
    UTILITY ROUTINES
 */
@@ -19,10 +27,7 @@ function log()
     if(console){ console.log.apply(console, arguments); } 
 }
 
-function byId(id)
-{
-    return document.getElementById(id);
-}
+
 
 function toPixel(num)
 {
@@ -176,8 +181,9 @@ function findf()
 {
     log("find-btn clicked");
     toggle_panes(true);
-    start_finding();
-    setup_visualizer();
+    
+    var car_loc_f = setup_visualizer();
+    start_finding(car_loc_f);
 }
 
 function backf()
@@ -203,7 +209,7 @@ function setup_visualizer()
     position_user(vis.offsetWidth, vis_height);
     
     /* now adjust the car function */
-    window.update_car_location = get_update_car_location_f(vis.offsetWidth, vis_height);
+    return( get_update_car_location_f(vis.offsetWidth, vis_height) );
     
 }
 
@@ -240,26 +246,35 @@ function position_user(parentW, parentH)
     FIND LAST LOCATION 
 */
 
-function start_finding(start)
+function start_finding(car_loc_f)
 {
+    var update_position_f = get_update_positionf(car_loc_f);
     
-    var watchId = navigator.geolocation.watchPosition(update_positionf,
+    var watchId = navigator.geolocation.watchPosition(update_position_f,
                                 get_error_callback("error when retrieving position"),
                                 geolocation_options_constant);
-    window.end_finding = function()
-                         {
-                            navigator.geolocation.clearWatch(watchId);                     
-                         };
+    end_finding =   function()
+                    {
+                        navigator.geolocation.clearWatch(watchId);                     
+                    };
 }
 
-function update_positionf(position)
+function get_update_positionf(car_loc_f)
 {
-    log("new position received", position);
-    display_current_location(position);
-    var last_location = get_last_location();
-    display_distance(calc_distance(last_location, position.coords));
-    update_car_location(last_location, position.coords);
-    clear_error();
+    
+    return( function(position)
+            {
+                log("new position received " +  position); 
+                //log(update_car_location);
+                //log(this.update_car_location);
+                //log(w_c);
+                //log("logging");
+                display_current_location(position);
+                var last_location = get_last_location();
+                display_distance(calc_distance(last_location, position.coords));
+                car_loc_f(last_location, position.coords);
+                clear_error();
+            });
 }
 
 function display_distance(d)
@@ -307,6 +322,8 @@ function degrees_to_radians(deg)
 {
     return deg * Math.PI / 180;
 }
+    
+    
 
  
 

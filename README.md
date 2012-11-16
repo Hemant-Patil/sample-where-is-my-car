@@ -1,16 +1,27 @@
+"Where Is My Car" is a simple app that will operate as either a web app or a 
+PhoneGap* app. It makes use of the Geolocation API and will let the user store a 
+location and then later find the distance and direction back to that location. 
+Try it as both a web app and a PhoneGap app across devices observe the difference 
+in accuracy of devices with and without GPS.  This app also shows a unified 
+system for getting startup events for both web apps and PhoneGap apps, as well 
+as some other features like multiple pages in a single-page app, apple touch 
+icon, and viewport meta.
+
+
 Application Files
 -----------------
 * index.html
 * config.xml
-* phonegap.js              //a stub, not the Cordova PhoneGap.js file
-* fauxgap.js               //a stub that fulfills a fake PhoneGap API.  Use it for JS debugging in the Preview.
+* abstract.txt
+* app.json
+* cordova.js               // needed by the Ripple Emulator
+* pg_event_assist.js       // allows app to be run as a web app or PhoneGap* app and use deviceready for both for initialization.
+* fauxgap.js               // stub file, fake PhoneGap API for debugging on desktop
 * css/app_styles.css
 * css/ios_styles.css
 * js/app.js
-* images/car.png
-* images/user_silhouette.png
 
-Copyright (c) 2012, Intel Corporation, version: 15 October 2012
+Copyright (c) 2012, Intel Corporation
 
 Redistribution and use in source and binary forms, with or without modification, 
 are permitted provided that the following conditions are met:
@@ -38,22 +49,19 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-
-
-
 Cordova (PhoneGap) Library
 --------------------------
-
 * source:  http://www.phonegap.com/
 * license:  http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-IMAGES
-------
-All images and icons  and are licensed under the Creative Commons Attribution 3.0 license 
-http://creativecommons.org/licenses/by/3.0/us/
-
 Image Attributions
 ------------------
-User Icon: http://www.fatcow.com/free-icons
- Car Icon: http://www.fatcow.com/free-icons
+* images/car.png
+* images/user_silhouette.png
+
+source: http://www.fatcow.com/free-icons
+license: http://creativecommons.org/licenses/by/3.0/us/
+
+
+* Other names and brands may be claimed as the property of others.

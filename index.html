@@ -10,9 +10,16 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title>Where Is My Car?</title>
     
-    <!-- we include a simple  dummy phonegap.js that simply fires a deviceready event
-         for our web app. When compiled as PhoneGap this stub will be ignored -->
-    <script src="phonegap.js"></script>
+    <!-- for debugging, all apps should include a cordova.js file.  
+         Ultimately, this file will be replaced by PhoneGapBuild by the correct cordova.js file for that platform.
+     -->
+    <script src="cordova.js"></script>
+
+    <!-- If you want an app to be deployable both as a web app AND as a PhoneGap app, then consider using pg_event_assist.js
+         It will let you use the deviceready event for your app initialization.  deviceready will then be fired both 
+         in the browser and when running under PhoneGap. This can make app initialization easier.
+    -->
+    <script src="pg_event_assist.js"></script>
     
     <!-- when mobile let's size this page down to the phone/tablet
          for more information: https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag
@@ -44,8 +51,8 @@
     <script src="js/app.js"></script>
     <script>
         /* To keep things simple, we want exactly one initialization routine.
-            our fake phonegap.js that we are using in this project will fire
-            the PhoneGap deviceready event when the page loads.
+            the pg_event_assist.js that we are using in this project will insure that
+            the PhoneGap deviceready event fires even if running as a web app in the browser.
         */
         function onDeviceReady()
         {
@@ -57,6 +64,7 @@
         
         function init_app()
         {
+           
             setup_button_events(); // see app.js
             display_last_location(get_last_location());   //see app.js
             
