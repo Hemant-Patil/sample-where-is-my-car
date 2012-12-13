@@ -11,7 +11,7 @@
 
     <name>Where Is My Car</name>
     <content src="index.html"/>
-    <icon src="images/car.png"/>
+    <icon src="icon.png"/>
 
     <description>
         Trouble remembering where you parked your car? Have a smartphone with GPS support?
