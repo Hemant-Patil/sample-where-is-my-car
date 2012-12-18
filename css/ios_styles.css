@@ -103,3 +103,11 @@
 }
 
 body, html{ margin:0; padding:0; }
+
+/* to fix title overlapping issue at 240px device width */
+@media (max-width: 300px) {
+    .header h1 {
+        font-size: 14px;
+        line-height: 24px;
+    }
+} 
