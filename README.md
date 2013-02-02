@@ -7,6 +7,13 @@ system for getting startup events for both web apps and PhoneGap apps, as well
 as some other features like multiple pages in a single-page app, apple touch 
 icon, and viewport meta.
 
+Intel(R) HTML5 Development Environment Beta
+-------------------------------------------
+This sample is part of the Intel(R) HTML5 Development Environment tool. 
+Please sign up the beta at http://software.intel.com/en-us/html5.
+To see the technical detail of the sample, please visit the sample article page 
+at http://software.intel.com/en-us/articles/where-is-my-car-web-app-and-phonegap-app. 
+
 
 Application Files
 -----------------
@@ -14,6 +21,8 @@ Application Files
 * config.xml
 * abstract.txt
 * app.json
+* icon.png
+* screenshot.png
 * cordova.js               // needed by the Ripple Emulator
 * pg_event_assist.js       // allows app to run as web app or PhoneGap* app and use deviceready for both for initialization
 * fauxgap.js               // stub file, fake PhoneGap API for debugging on desktop
