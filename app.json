@@ -5,5 +5,5 @@
 	"description":"Unifies startup events so that a single source code base can run as both a web app and as a PhoneGap app; while taking advantage of device features. Uses GeoLocation and LocalStorage APIs.",
 	"articleurl":"http://software.intel.com/en-us/articles/where-is-my-car-web-app-and-phonegap-app",
 	"categories":["PhoneGap","Geolocation","Data Storage"],
-	"visible": "true"
+	"visible": "false"
 }
